@@ -1,0 +1,7 @@
+.title{
+    position:absolute;
+    left: 50%;
+    top : 15vh;
+    transform: translateX(-50%);
+    font-size: 3rem;
+}

@@ -1,0 +1,9 @@
+.mainSearchContainer{
+width: 50%;
+height : 400px;
+border: 1px solid black;
+position:absolute;
+left: 50%;
+top: 25vh;
+transform: translateX(-50%);
+}

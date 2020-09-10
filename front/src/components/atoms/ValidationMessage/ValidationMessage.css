@@ -1,0 +1,11 @@
+.validated {
+  color: rgb(35, 100, 35);
+}
+
+.notValidated {
+  color: rgb(197, 56, 56);
+}
+
+.general {
+  font-size: 0.8rem;
+}
