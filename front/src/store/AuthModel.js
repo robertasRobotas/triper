@@ -6,6 +6,7 @@ const Auth = types
   .model('Auth', {
     loggedInStatus: types.optional(types.boolean, false),
     user: types.maybeNull(UserModel),
+    appData: types.maybeNull(AppDataModel),
     loading: types.optional(types.boolean, false),
     linkToRedirectLater: types.optional(types.string, ''),
   })
