@@ -1,5 +1,6 @@
 import { types, flow } from 'mobx-state-tree';
 import axios from 'axios';
+import { Routes } from './RoutesModel';
 
 const User = types
   .model('User', {
@@ -7,6 +8,8 @@ const User = types
     id: types.string,
     email: types.string,
     picture: types.string,
+    createdRoutes: types.maybeNull(types.array(Routes)),
+    savedRoutes: types.maybeNull(types.array(Routes)),
     city: types.maybeNull(types.string),
     preferredSports: types.maybeNull(types.array(types.string)),
   })

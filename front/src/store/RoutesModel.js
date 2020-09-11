@@ -1,8 +1,14 @@
 import { types, flow } from 'mobx-state-tree';
 import axios from 'axios';
 
-const User = types
-  .model('User', {
+const Routes = types
+  .model('Routes', {
+    routeItems: types.maybeNull(types.array(Route)),
+  })
+  .actions((self) => ({}));
+
+const Route = types
+  .model('Route', {
     routeName: types.string,
     id: types.maybeNull(types.string),
     routeDescription: types.string,
@@ -11,4 +17,4 @@ const User = types
   })
   .actions((self) => ({}));
 
-export default User;
+export { Routes, Route };
