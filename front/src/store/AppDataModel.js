@@ -9,4 +9,4 @@ const AppData = types
   })
   .actions((self) => ({}));
 
-export { AppData };
+export default AppData;

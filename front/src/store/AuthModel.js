@@ -1,6 +1,7 @@
 import { types, flow } from 'mobx-state-tree';
 import axios from 'axios';
 import UserModel from './UserModel';
+import AppDataModel from './AppDataModel';
 
 const Auth = types
   .model('Auth', {
