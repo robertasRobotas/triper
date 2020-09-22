@@ -1,22 +1,30 @@
-import React from 'react';
-import Wrapper from '../../_hoc/Wrapper';
-import { observer } from 'mobx-react';
-import { MainSearch } from '../../organisms';
-import { Button } from '../../atoms';
-import '../pages.css';
-import './Main.css';
+import React, { Component } from 'react';
+import GoogleMapReact from 'google-map-react';
 
-const Main = ({ history, location, rootModel }) => {
-  if (!rootModel.auth.user.city) {
-    history.push('/addInfo');
+const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
+class SimpleMap extends Component {
+  static defaultProps = {
+    center: {
+      lat: 59.95,
+      lng: 30.33,
+    },
+    zoom: 11,
+  };
+
+  render() {
+    return (
+      // Important! Always set the container height explicitly
+      <div style={{ height: '90vh', width: '90%' }}>
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: 'AIzaSyC87zB-AkjcA1HQFBkM370neC_vj1Y2PMo' }}
+          defaultCenter={this.props.center}
+          defaultZoom={this.props.zoom}>
+          <AnyReactComponent lat={59.955413} lng={30.337844} text='My Marker' />
+        </GoogleMapReact>
+      </div>
+    );
   }
+}
 
-  return (
-    <Wrapper
-      history={history}
-      rootModel={rootModel}
-      location={location}></Wrapper>
-  );
-};
-
-export default observer(Main);
+export default SimpleMap;
