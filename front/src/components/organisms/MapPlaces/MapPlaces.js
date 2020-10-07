@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import PlaceSelection from '../Molecules/PlaceSelection';
-import AddPlaceSection from '../Molecules/AddPlaceSection';
+import { PlacesList, PlacesSearchTools } from '../../molecules';
 import { getGeocode, getGeolocation } from '../../../helpers/apiCalls';
 
 const MapPlaces = ({
@@ -21,7 +20,7 @@ const MapPlaces = ({
       }}>
       <div className='placesPrimaryTitle'>Make a Route</div>
       <div className='placesSecondaryTitle'>Add place</div>
-      <AddPlaceSection
+      <PlacesSearchTools
         getGeocode={getGeocode}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}
@@ -30,7 +29,7 @@ const MapPlaces = ({
         setPlaces={setPlaces}
       />
       {places.map((place) => (
-        <PlaceSelection
+        <PlacesList
           key={`${place.lat}${place.lng}`}
           place={place}
           setSelectedPlace={setSelectedPlace}

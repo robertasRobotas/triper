@@ -1,5 +1,4 @@
 import axios from 'axios';
-import secrets from '../secret';
 
 const getGeocode = (location) =>
   axios.get(
