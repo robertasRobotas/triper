@@ -1,13 +1,11 @@
 import { types, flow } from 'mobx-state-tree';
 import axios from 'axios';
 import UserModel from './UserModel';
-import AppDataModel from './AppDataModel';
 
 const Auth = types
   .model('Auth', {
     loggedInStatus: types.optional(types.boolean, false),
     user: types.maybeNull(UserModel),
-    appData: types.maybeNull(AppDataModel),
     loading: types.optional(types.boolean, false),
     linkToRedirectLater: types.optional(types.string, ''),
   })
