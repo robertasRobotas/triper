@@ -1,30 +1,39 @@
-import React, { Component } from 'react';
-import GoogleMapReact from 'google-map-react';
+import React, { useState } from 'react';
+import { Map, MapPlaces } from '../../organisms';
+import Wrapper from '../../_hoc/Wrapper';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Main = ({ history, location, rootModel }) => {
+  const [selectedPlace, setSelectedPlace] = useState({
+    lat: 59.95,
+    lng: 30.33,
+  });
 
-class SimpleMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33,
-    },
-    zoom: 11,
-  };
+  const [places, setPlaces] = useState([
+    { lat: 59.95, lng: 40.33, title: 'aa' },
+    { lat: 69.95, lng: 60.33, title: 'bb' },
+    { lat: 79.95, lng: 40.33, title: 'cc' },
+    { lat: 89.95, lng: 50.33, title: 'dd' },
+    { lat: 59.95, lng: 30.33, title: 'ee' },
+    { lat: 59.95, lng: 30.34, title: 'ff' },
+  ]);
+  return (
+    <Wrapper history={history} rootModel={rootModel} location={location}>
+      <MapPlaces
+        width={'30vw'}
+        height={'100vh'}
+        places={places}
+        setPlaces={setPlaces}
+        selectedPlace={selectedPlace}
+        setSelectedPlace={setSelectedPlace}
+      />
+      <Map
+        width={'70vw'}
+        height={'100vh'}
+        selectedPlace={selectedPlace}
+        setSelectedPlace={setSelectedPlace}
+      />
+    </Wrapper>
+  );
+};
 
-  render() {
-    return (
-      // Important! Always set the container height explicitly
-      <div style={{ height: '90vh', width: '90%' }}>
-        <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyC87zB-AkjcA1HQFBkM370neC_vj1Y2PMo' }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}>
-          <AnyReactComponent lat={59.955413} lng={30.337844} text='My Marker' />
-        </GoogleMapReact>
-      </div>
-    );
-  }
-}
-
-export default SimpleMap;
+export default Main;
