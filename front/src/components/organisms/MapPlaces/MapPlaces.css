@@ -1,0 +1,19 @@
+.places {
+  background-color: brown;
+}
+
+.placesPrimaryTitle {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: 500;
+}
+
+.placesSecondaryTitle {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  font-weight: 400;
+}

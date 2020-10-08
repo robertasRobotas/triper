@@ -19,7 +19,7 @@ const Main = ({ history, location, rootModel }) => {
   return (
     <Wrapper history={history} rootModel={rootModel} location={location}>
       <MapPlaces
-        width={'30vw'}
+        width={'30%'}
         height={'100vh'}
         places={places}
         setPlaces={setPlaces}
@@ -27,7 +27,7 @@ const Main = ({ history, location, rootModel }) => {
         setSelectedPlace={setSelectedPlace}
       />
       <Map
-        width={'70vw'}
+        width={'70%'}
         height={'100vh'}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}

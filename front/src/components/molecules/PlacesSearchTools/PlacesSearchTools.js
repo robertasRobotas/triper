@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './PlacesSearchTools.css';
 
 const PlacesSearchTools = ({
   getGeocode,

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PlacesList, PlacesSearchTools } from '../../molecules';
 import { getGeocode, getGeolocation } from '../../../helpers/apiCalls';
+import './MapPlaces.css';
 
 const MapPlaces = ({
   width,

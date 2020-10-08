@@ -1,0 +1,22 @@
+.typePlaceInput {
+  width: 80%;
+}
+
+.typePlaceButton {
+  width: 17%;
+}
+
+.yourLocationButton {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.addPlaceButton {
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
