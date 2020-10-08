@@ -1,0 +1,12 @@
+.placeSelectionButton {
+  width: 100%;
+  background-color: rgb(139, 253, 215, 0.8);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-top: 1px solid rgb(143, 143, 143);
+}
+
+.placeSelectionButton:hover {
+  background-color: rgb(139, 253, 215, 1);
+}
