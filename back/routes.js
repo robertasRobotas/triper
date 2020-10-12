@@ -9,7 +9,7 @@ const initializeRoutes = () => {
   router.use('/google', googleUserRoute);
   router.use('/facebook', facebookUserRoute);
   router.use('/api/user', userRoute);
-  router.use('/api/googleMaps', googleMapsApi);
+  router.use('/googleMaps', googleMapsApi);
 
   return router;
 };
