@@ -25,13 +25,12 @@ const Main = ({ history, location, rootModel }) => {
         setPlaces={setPlaces}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}
-        x={rootModel.appData.currentPlace}
+        place={rootModel.appData.currentPlace}
       />
       <Map
         width={'70%'}
         height={'calc(100vh - 4em)'}
-        selectedPlace={selectedPlace}
-        setSelectedPlace={setSelectedPlace}
+        place={rootModel.appData.currentPlace}
       />
     </Wrapper>
   );

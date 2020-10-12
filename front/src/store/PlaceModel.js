@@ -14,16 +14,14 @@ const Place = types
       location
     ) {
       try {
-        yield axios
+        return yield axios
           .post(
             `${process.env.REACT_APP_SERVER_HOST}/googleMaps/getGeocodeByPlace`,
             {
               location: location,
             }
           )
-          .then((res) => {
-            console.log('res', res);
-          });
+          .then((res) => res.data.response.results);
       } catch (error) {
         console.log(error);
       }

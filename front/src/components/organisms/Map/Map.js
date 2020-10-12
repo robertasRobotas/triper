@@ -10,7 +10,7 @@ const AnyReactComponent = () => (
   />
 );
 
-const Map = ({ height, width, selectedPlace, setSelectedPlace }) => {
+const Map = ({ height, width, place }) => {
   const [zoom, setZoom] = useState(11);
   console.log(process.env.REACT_APP_GOOGLE_API_KEY);
 
@@ -24,12 +24,12 @@ const Map = ({ height, width, selectedPlace, setSelectedPlace }) => {
       }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
-        center={selectedPlace}
+        center={place}
         defaultZoom={zoom}
         onClick={(e) => {
-          setSelectedPlace({ lat: e.lat, lng: e.lng });
+          console.log('lol');
         }}>
-        <AnyReactComponent lat={selectedPlace.lat} lng={selectedPlace.lng} />
+        <AnyReactComponent lat={place.lat} lng={place.lng} />
       </GoogleMapReact>
     </div>
   );

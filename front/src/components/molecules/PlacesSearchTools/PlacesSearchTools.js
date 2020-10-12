@@ -1,15 +1,7 @@
 import React, { useState } from 'react';
 import './PlacesSearchTools.css';
 
-const PlacesSearchTools = ({
-  getGeocode,
-  getGeolocation,
-  selectedPlace,
-  setSelectedPlace,
-  places,
-  setPlaces,
-  x,
-}) => {
+const PlacesSearchTools = ({ selectedPlace, places, setPlaces, place }) => {
   const [locationInput, setLocationInput] = useState('');
 
   return (
@@ -22,13 +14,20 @@ const PlacesSearchTools = ({
         />
         <button
           className='typePlaceButton'
-          onClick={() => x.setUserLocationByGeocode(locationInput)}>
+          onClick={() =>
+            place.setUserLocationByGeocode(locationInput).then((res) => {
+              place.setNewCurrentPlace({
+                lat: res[0].geometry.location.lat,
+                lng: res[0].geometry.location.lng,
+              });
+            })
+          }>
           go
         </button>
       </div>
       <button
         className='yourLocationButton'
-        onClick={() => x.setUserLocationByGeocode()}>
+        onClick={() => place.setUserLocationByGeocode()}>
         your place
       </button>
       <button
