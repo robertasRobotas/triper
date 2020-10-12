@@ -10,6 +10,7 @@ const MapPlaces = ({
   setSelectedPlace,
   places,
   setPlaces,
+  x,
 }) => {
   return (
     <div
@@ -28,6 +29,7 @@ const MapPlaces = ({
         getGeolocation={getGeolocation}
         places={places}
         setPlaces={setPlaces}
+        x={x}
       />
       {places.map((place) => (
         <PlacesList

@@ -25,6 +25,7 @@ const Main = ({ history, location, rootModel }) => {
         setPlaces={setPlaces}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}
+        x={rootModel.appData.currentPlace}
       />
       <Map
         width={'70%'}

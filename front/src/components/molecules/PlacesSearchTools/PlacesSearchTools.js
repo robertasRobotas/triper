@@ -8,6 +8,7 @@ const PlacesSearchTools = ({
   setSelectedPlace,
   places,
   setPlaces,
+  x,
 }) => {
   const [locationInput, setLocationInput] = useState('');
 
@@ -21,27 +22,13 @@ const PlacesSearchTools = ({
         />
         <button
           className='typePlaceButton'
-          onClick={() =>
-            getGeocode(locationInput).then((res) => {
-              setSelectedPlace({
-                lat: res.data.results[0].geometry.location.lat,
-                lng: res.data.results[0].geometry.location.lng,
-              });
-            })
-          }>
+          onClick={() => x.setUserLocationByGeocode(locationInput)}>
           go
         </button>
       </div>
       <button
         className='yourLocationButton'
-        onClick={() =>
-          getGeolocation().then((res) => {
-            setSelectedPlace({
-              lat: res.data.location.lat,
-              lng: res.data.location.lng,
-            });
-          })
-        }>
+        onClick={() => x.setUserLocationByGeocode()}>
         your place
       </button>
       <button
