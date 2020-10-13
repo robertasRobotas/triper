@@ -11,4 +11,14 @@ router.post('/getGeocodeByPlace', (req, res) => {
   });
 });
 
+router.post('/getGeolocation', (req, res) => {
+  console.log('hit');
+  fetch(
+    `https://www.googleapis.com/geolocation/v1/geolocate?key=${process.env.GOOGLE_API_KEY}`,
+    { method: 'POST' }
+  ).then(async (response) => {
+    return res.status(200).json({ response: await response.json() });
+  });
+});
+
 module.exports = router;

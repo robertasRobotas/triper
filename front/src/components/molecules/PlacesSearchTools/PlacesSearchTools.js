@@ -15,7 +15,7 @@ const PlacesSearchTools = ({ selectedPlace, places, setPlaces, place }) => {
         <button
           className='typePlaceButton'
           onClick={() =>
-            place.setUserLocationByGeocode(locationInput).then((res) => {
+            place.getGeocodeByPlace(locationInput).then((res) => {
               place.setNewCurrentPlace({
                 lat: res[0].geometry.location.lat,
                 lng: res[0].geometry.location.lng,
@@ -27,7 +27,14 @@ const PlacesSearchTools = ({ selectedPlace, places, setPlaces, place }) => {
       </div>
       <button
         className='yourLocationButton'
-        onClick={() => place.setUserLocationByGeocode()}>
+        onClick={() =>
+          place.getUserLocation().then((res) => {
+            place.setNewCurrentPlace({
+              lat: res.lat,
+              lng: res.lng,
+            });
+          })
+        }>
         your place
       </button>
       <button

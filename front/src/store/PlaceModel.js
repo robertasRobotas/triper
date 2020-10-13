@@ -10,9 +10,7 @@ const Place = types
     lng: types.maybeNull(types.number),
   })
   .actions((self) => ({
-    setUserLocationByGeocode: flow(function* setUserLocationByGeocode(
-      location
-    ) {
+    getGeocodeByPlace: flow(function* getGeocodeByPlace(location) {
       try {
         return yield axios
           .post(
@@ -22,6 +20,17 @@ const Place = types
             }
           )
           .then((res) => res.data.response.results);
+      } catch (error) {
+        console.log(error);
+      }
+    }),
+    getUserLocation: flow(function* getUserLocation() {
+      try {
+        return yield axios
+          .post(
+            `${process.env.REACT_APP_SERVER_HOST}/googleMaps/getGeolocation`
+          )
+          .then((res) => res.data.response.location);
       } catch (error) {
         console.log(error);
       }
