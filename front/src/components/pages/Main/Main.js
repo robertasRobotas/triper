@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Map, MapPlaces } from '../../organisms';
 import Wrapper from '../../_hoc/Wrapper';
+import RouteModel from '../../../store/RouteModel';
 
 const Main = ({ history, location, rootModel }) => {
   const [selectedPlace, setSelectedPlace] = useState({
@@ -22,6 +23,7 @@ const Main = ({ history, location, rootModel }) => {
         width={'30%'}
         height={'calc(100vh - 4em)'}
         places={places}
+        route={rootModel.appData.route}
         setPlaces={setPlaces}
         selectedPlace={selectedPlace}
         setSelectedPlace={setSelectedPlace}

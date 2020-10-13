@@ -11,6 +11,7 @@ const MapPlaces = ({
   places,
   setPlaces,
   place,
+  route,
 }) => {
   return (
     <div
@@ -31,7 +32,7 @@ const MapPlaces = ({
         setPlaces={setPlaces}
         place={place}
       />
-      {places.map((place) => (
+      {route.routeItems.map((place) => (
         <PlacesList
           key={`${place.lat}${place.lng}`}
           place={place}

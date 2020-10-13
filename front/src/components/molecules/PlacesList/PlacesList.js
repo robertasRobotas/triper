@@ -11,7 +11,7 @@ const PlacesList = ({ place, setSelectedPlace }) => {
           lng: place.lng,
         })
       }>
-      {place.title}
+      {place.placeTitle}
     </div>
   );
 };
