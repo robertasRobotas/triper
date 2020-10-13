@@ -1,17 +1,5 @@
 import { types, flow } from 'mobx-state-tree';
-import axios from 'axios';
-import { Place } from './PlaceModel';
-
-const Route = types
-  .model('Route', {
-    routeName: types.string,
-    id: types.maybeNull(types.string),
-    creator: types.string,
-    routeDescription: types.string,
-    routeCategory: types.string,
-    routeItems: types.maybeNull(types.array(types.string)),
-  })
-  .actions((self) => ({}));
+import Route from './RouteModel';
 
 const Routes = types
   .model('Routes', {
@@ -19,4 +7,4 @@ const Routes = types
   })
   .actions((self) => ({}));
 
-export { Routes, Route };
+export default Routes;

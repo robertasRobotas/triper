@@ -1,6 +1,6 @@
 import { types, flow } from 'mobx-state-tree';
 import axios from 'axios';
-import { Routes } from './RoutesModel';
+import Routes from './RoutesModel';
 
 const User = types
   .model('User', {

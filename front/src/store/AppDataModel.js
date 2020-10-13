@@ -1,5 +1,5 @@
 import { types, flow } from 'mobx-state-tree';
-import { Routes } from './RoutesModel';
+import Routes from './RoutesModel';
 import { Place } from './PlaceModel';
 
 const AppData = types
