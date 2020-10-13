@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import locationSign from '../../../assets/photos/locationSign.png';
+import { observer } from 'mobx-react';
 
 const AnyReactComponent = () => (
   <img
@@ -12,7 +13,6 @@ const AnyReactComponent = () => (
 
 const Map = ({ height, width, place }) => {
   const [zoom, setZoom] = useState(11);
-  console.log(process.env.REACT_APP_GOOGLE_API_KEY);
 
   return (
     <div
@@ -24,10 +24,13 @@ const Map = ({ height, width, place }) => {
       }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
-        center={place}
+        center={{ lat: place.lat, lng: place.lng }}
         defaultZoom={zoom}
         onClick={(e) => {
-          console.log('lol');
+          place.setNewCurrentPlace({
+            lat: e.lat,
+            lng: e.lng,
+          });
         }}>
         <AnyReactComponent lat={place.lat} lng={place.lng} />
       </GoogleMapReact>
@@ -35,4 +38,4 @@ const Map = ({ height, width, place }) => {
   );
 };
 
-export default Map;
+export default observer(Map);
